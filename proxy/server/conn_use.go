@@ -17,8 +17,8 @@ package server
 import (
 	"fmt"
 
-	"github.com/flike/kingshard/mysql"
-	"github.com/flike/kingshard/sqlparser"
+	"github.com/neverlock/kingshard/mysql"
+	"github.com/neverlock/kingshard/sqlparser"
 )
 
 func (c *ClientConn) handleUseDB(stmt *sqlparser.UseDB) error {

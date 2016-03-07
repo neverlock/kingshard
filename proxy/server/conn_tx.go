@@ -15,9 +15,9 @@
 package server
 
 import (
-	//	"github.com/flike/kingshard/backend"
-	"github.com/flike/kingshard/mysql"
+	//	"github.com/neverlock/kingshard/backend"
 	"github.com/neverlock/kingshard/backend"
+	"github.com/neverlock/kingshard/mysql"
 )
 
 func (c *ClientConn) isInTransaction() bool {

@@ -25,8 +25,8 @@ import (
 	"hash/crc32"
 	"strconv"
 
-	"github.com/flike/kingshard/core/errors"
-	"github.com/flike/kingshard/core/hack"
+	"github.com/neverlock/kingshard/core/errors"
+	"github.com/neverlock/kingshard/core/hack"
 )
 
 /*由分片ID找到分片，可用文件中的函数*/

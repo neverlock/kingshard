@@ -18,7 +18,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/flike/kingshard/core/yaml"
+	"github.com/neverlock/kingshard/core/yaml"
 )
 
 //整个config文件对应的结构

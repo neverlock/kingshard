@@ -21,14 +21,14 @@ import (
 	"sync"
 	"time"
 
-	//"github.com/flike/kingshard/backend"
-	"github.com/flike/kingshard/core/errors"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/core/hack"
-	"github.com/flike/kingshard/mysql"
-	"github.com/flike/kingshard/proxy/router"
-	"github.com/flike/kingshard/sqlparser"
+	//"github.com/neverlock/kingshard/backend"
 	"github.com/neverlock/kingshard/backend"
+	"github.com/neverlock/kingshard/core/errors"
+	"github.com/neverlock/kingshard/core/golog"
+	"github.com/neverlock/kingshard/core/hack"
+	"github.com/neverlock/kingshard/mysql"
+	"github.com/neverlock/kingshard/proxy/router"
+	"github.com/neverlock/kingshard/sqlparser"
 )
 
 /*处理query语句*/

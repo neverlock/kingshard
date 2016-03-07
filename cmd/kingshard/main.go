@@ -24,9 +24,9 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/flike/kingshard/config"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/proxy/server"
+	"github.com/neverlock/kingshard/config"
+	"github.com/neverlock/kingshard/core/golog"
+	"github.com/neverlock/kingshard/proxy/server"
 )
 
 var configFile *string = flag.String("config", "/etc/kingshard.conf", "kingshard config file")

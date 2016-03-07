@@ -21,7 +21,7 @@ package sqlparser
 import (
 	"errors"
 
-	"github.com/flike/kingshard/sqltypes"
+	"github.com/neverlock/kingshard/sqltypes"
 )
 
 // Instructions for creating new types: If a type

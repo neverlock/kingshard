@@ -26,14 +26,14 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/flike/kingshard/mysql"
+	"github.com/neverlock/kingshard/mysql"
 
-	//"github.com/flike/kingshard/backend"
-	"github.com/flike/kingshard/config"
-	"github.com/flike/kingshard/core/errors"
-	"github.com/flike/kingshard/core/golog"
-	"github.com/flike/kingshard/proxy/router"
+	//"github.com/neverlock/kingshard/backend"
 	"github.com/neverlock/kingshard/backend"
+	"github.com/neverlock/kingshard/config"
+	"github.com/neverlock/kingshard/core/errors"
+	"github.com/neverlock/kingshard/core/golog"
+	"github.com/neverlock/kingshard/proxy/router"
 )
 
 type Schema struct {
