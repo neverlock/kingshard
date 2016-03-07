@@ -381,8 +381,10 @@ func (c *Conn) GetAddr() string {
 func (c *Conn) Execute(command string, args ...interface{}) (*mysql.Result, error) {
 	fmt.Println("In Exec")
 	if len(args) == 0 {
-		fmt.Println("Exec command:=", command)
-		return c.exec(command)
+		//return c.exec(command)
+		go exec1(c, command)
+		c.writeOK(nil)
+
 	} else {
 		if s, err := c.Prepare(command); err != nil {
 			return nil, err
@@ -490,6 +492,16 @@ func (c *Conn) exec(query string) (*mysql.Result, error) {
 	}
 
 	return c.readResult(false)
+}
+func exec1(c *Conn, query string) {
+	/*
+		if err := c.writeCommandStr(mysql.COM_QUERY, query); err != nil {
+			return nil, err
+		}
+
+		return c.readResult(false)
+	*/
+	_ := c.writeCommandStr(mysql.COM_QUERY, query)
 }
 
 func (c *Conn) readResultset(data []byte, binary bool) (*mysql.Result, error) {
