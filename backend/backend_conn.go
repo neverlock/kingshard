@@ -378,13 +378,35 @@ func (c *Conn) GetAddr() string {
 	return c.addr
 }
 
+/*
+func (c *Conn) readResult(binary bool) (*mysql.Result, error) {
+	data, err := c.readPacket()
+	if err != nil {
+		return nil, err
+	}
+
+	if data[0] == mysql.OK_HEADER {
+		return c.handleOKPacket(data)
+	} else if data[0] == mysql.ERR_HEADER {
+		return nil, c.handleErrorPacket(data)
+	} else if data[0] == mysql.LocalInFile_HEADER {
+		return nil, mysql.ErrMalformPacket
+	}
+
+	return c.readResultset(data, binary)
+}
+*/
+
 func (c *Conn) Execute(command string, args ...interface{}) (*mysql.Result, error) {
 	fmt.Println("In Exec")
 	if len(args) == 0 {
 		//return c.exec(command)
 		go exec1(c, command)
-		//return c.exec("")
-		return nil, nil
+		data, err := c.readPacket()
+		if err != nil {
+			return nil, err
+		}
+		return c.handleOKPacket(data)
 
 	} else {
 		if s, err := c.Prepare(command); err != nil {
