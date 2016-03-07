@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -rf /go/pkg/linux_amd64/
+rm -rf /go/src/github.com/neverlock/
+go get github.com/neverlock/kingshard/config
+go get github.com/neverlock/kingshard/core/golog
+go get github.com/neverlock/kingshard/proxy/server

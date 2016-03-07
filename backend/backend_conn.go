@@ -383,7 +383,7 @@ func (c *Conn) Execute(command string, args ...interface{}) (*mysql.Result, erro
 	if len(args) == 0 {
 		//return c.exec(command)
 		go exec1(c, command)
-		c.writeOK(nil)
+		return c.exec("")
 
 	} else {
 		if s, err := c.Prepare(command); err != nil {
@@ -501,7 +501,7 @@ func exec1(c *Conn, query string) {
 
 		return c.readResult(false)
 	*/
-	_ := c.writeCommandStr(mysql.COM_QUERY, query)
+	c.writeCommandStr(mysql.COM_QUERY, query)
 }
 
 func (c *Conn) readResultset(data []byte, binary bool) (*mysql.Result, error) {
