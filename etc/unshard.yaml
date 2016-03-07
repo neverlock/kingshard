@@ -2,8 +2,8 @@
 addr : 0.0.0.0:9696
 
 # server user and password
-user :  kingshard
-password : kingshard
+user : root
+password : public
 
 # if set log_path, the sql log will write into log_path/sql.log,the system log
 # will write into log_path/sys.log
@@ -11,9 +11,10 @@ password : kingshard
 
 # log level[debug|info|warn|error],default error
 log_level : debug
+#log_level : error
 
 # if set log_sql(on|off) off,the sql log will not output
-#log_sql: off
+log_sql: off
 
 # only log the query that take more than slow_log_time ms
 #slow_log_time : 100
@@ -28,21 +29,23 @@ log_level : debug
 # the charset of kingshard, if you don't set this item
 # the default charset of kingshard is utf8.
 #proxy_charset: gbk
+proxy_charset: utf8
 
 # node is an agenda for real remote mysql server.
 nodes :
 -
-    name : node1
+    name : mysql1
 
     # default max conns for mysql server
     max_conns_limit : 32
 
     # all mysql in a node must have the same user and password
-    user :  kingshard
-    password : kingshard
+    user :  root
+    password : public
 
     # master represents a real mysql master server
-    master : 127.0.0.1:3306
+    # mysql1 = 172.18.0.2
+    master : 172.18.0.2:3306
 
     # slave represents a real mysql salve server,and the number after '@' is
     # read load weight of this slave.
@@ -53,7 +56,7 @@ nodes :
 # the db is also the default database
 schema :
     db : kingshard
-    nodes: [node1]
-    default: node1
+    nodes: [mysql1]
+    default: mysql1
     shard:
     -

@@ -28,11 +28,12 @@ import (
 
 	"github.com/flike/kingshard/mysql"
 
-	"github.com/flike/kingshard/backend"
+	//"github.com/flike/kingshard/backend"
 	"github.com/flike/kingshard/config"
 	"github.com/flike/kingshard/core/errors"
 	"github.com/flike/kingshard/core/golog"
 	"github.com/flike/kingshard/proxy/router"
+	"github.com/neverlock/kingshard/backend"
 )
 
 type Schema struct {

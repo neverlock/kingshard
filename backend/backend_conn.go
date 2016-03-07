@@ -379,7 +379,9 @@ func (c *Conn) GetAddr() string {
 }
 
 func (c *Conn) Execute(command string, args ...interface{}) (*mysql.Result, error) {
+	fmt.Println("In Exec")
 	if len(args) == 0 {
+		fmt.Println("Exec command:=", command)
 		return c.exec(command)
 	} else {
 		if s, err := c.Prepare(command); err != nil {
