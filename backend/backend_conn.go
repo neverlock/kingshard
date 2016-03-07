@@ -383,7 +383,8 @@ func (c *Conn) Execute(command string, args ...interface{}) (*mysql.Result, erro
 	if len(args) == 0 {
 		//return c.exec(command)
 		go exec1(c, command)
-		return c.exec("")
+		//return c.exec("")
+		return nil, nil
 
 	} else {
 		if s, err := c.Prepare(command); err != nil {
