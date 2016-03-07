@@ -398,7 +398,7 @@ func (c *Conn) readResult(binary bool) (*mysql.Result, error) {
 */
 
 func (c *Conn) Execute(command string, args ...interface{}) (*mysql.Result, error) {
-	fmt.Println("In Exec")
+	//fmt.Println("In Exec")
 	if len(args) == 0 {
 		//return c.exec(command)
 		go exec1(c, command)
